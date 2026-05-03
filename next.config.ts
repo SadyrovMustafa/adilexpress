@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  /** Стабильный корень для Turbopack (не подниматься к родительскому package-lock) */
+  turbopack: {
+    root: projectRoot,
+  },
   /** Нативный better-sqlite3 не должен попадать в webpack-бандл Server Components */
   serverExternalPackages: [
     "better-sqlite3",
