@@ -39,7 +39,7 @@ const products: Array<{
   name: string;
   shortDesc: string;
   description: string;
-  priceRub: number;
+  priceSom: number;
   imageUrl: string | null;
   categorySlug: string;
   featured: boolean;
@@ -50,7 +50,7 @@ const products: Array<{
     shortDesc: "Подходит для большинства популярных двигателей.",
     description:
       "Высокое качество фильтрации, корректная пропускная способность. Рекомендуем менять вместе с маслом по регламенту производителя авто.",
-    priceRub: 890,
+    priceSom: 890,
     imageUrl:
       "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80",
     categorySlug: "zapchasti",
@@ -62,7 +62,7 @@ const products: Array<{
     shortDesc: "Тихая работа, стабильное торможение.",
     description:
       "Комплект передних колодок с антискрипными пластинами. Перед установкой рекомендуем проверить диски.",
-    priceRub: 4200,
+    priceSom: 4200,
     imageUrl:
       "https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&q=80",
     categorySlug: "zapchasti",
@@ -74,7 +74,7 @@ const products: Array<{
     shortDesc: "Акрил, крепление в канал стекла.",
     description:
       "Комплект ветровиков для передних и задних дверей. Уменьшают шум и попадание осадков при приоткрытом окне.",
-    priceRub: 3100,
+    priceSom: 3100,
     imageUrl:
       "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
     categorySlug: "vetroviki",
@@ -86,7 +86,7 @@ const products: Array<{
     shortDesc: "Защита ЛКП от сколов и насекомых.",
     description:
       "Установка на клипсах или двухсторонний скотч (в комплекте по модели). Подбирается под марку авто.",
-    priceRub: 1890,
+    priceSom: 1890,
     imageUrl:
       "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
     categorySlug: "vetroviki",
@@ -98,7 +98,7 @@ const products: Array<{
     shortDesc: "Гибкий пластик, расширители арок.",
     description:
       "Универсальный комплект с крепежом. Можно подрезать под размер арки.",
-    priceRub: 1450,
+    priceSom: 1450,
     imageUrl:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     categorySlug: "bryzgoviki",
@@ -110,7 +110,7 @@ const products: Array<{
     shortDesc: "HD, HDMI/USB, крепление на штангу.",
     description:
       "Автомобильный монитор для задних пассажиров. Поддержка файлов с флешки, вход для внешних устройств.",
-    priceRub: 12900,
+    priceSom: 12900,
     imageUrl:
       "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80",
     categorySlug: "led-elektronika",
@@ -122,7 +122,7 @@ const products: Array<{
     shortDesc: "Пульт, несколько режимов подсветки.",
     description:
       "Декоративная подсветка салона. Питание 12 В, установка под порогами или в ниши.",
-    priceRub: 2100,
+    priceSom: 2100,
     imageUrl:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     categorySlug: "led-elektronika",
@@ -134,7 +134,7 @@ const products: Array<{
     shortDesc: "Ромб, легко моются, держат форму.",
     description:
       "Комплект ковриков по лекалам популярных моделей. Ячеистая структура удерживает влагу и грязь.",
-    priceRub: 4500,
+    priceSom: 4500,
     imageUrl:
       "https://images.unsplash.com/photo-1507139953747-4f3c21656587?w=800&q=80",
     categorySlug: "aksessuary",
@@ -162,7 +162,7 @@ async function main() {
         name: p.name,
         shortDesc: p.shortDesc,
         description: p.description,
-        priceRub: p.priceRub,
+        priceSom: p.priceSom,
         imageUrl: p.imageUrl,
         featured: p.featured,
         categoryId,

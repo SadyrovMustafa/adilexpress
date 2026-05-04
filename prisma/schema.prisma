@@ -24,7 +24,8 @@ model Product {
   name        String
   shortDesc   String?
   description String
-  priceRub    Int
+  /// Цена в сомах (KGS)
+  priceSom    Int
   imageUrl    String?
   categoryId  String
   category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)

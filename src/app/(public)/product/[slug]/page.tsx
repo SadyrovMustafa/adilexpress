@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatRub } from "@/lib/money";
+import { formatKgs } from "@/lib/money";
 import { prisma } from "@/lib/prisma";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -54,7 +54,7 @@ export default async function ProductPage({ params }: Props) {
           </p>
           <h1 className="mt-2 text-3xl font-bold text-zinc-900 dark:text-white">{product.name}</h1>
           <p className="mt-4 text-3xl font-bold text-zinc-900 dark:text-white">
-            {formatRub(product.priceRub)}
+            {formatKgs(product.priceSom)}
           </p>
           <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400">
             {product.inStock ? "В наличии" : "Нет в наличии — уточняйте срок поставки"}

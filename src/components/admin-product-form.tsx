@@ -14,7 +14,7 @@ type Product = {
   name: string;
   shortDesc: string | null;
   description: string;
-  priceRub: number;
+  priceSom: number;
   imageUrl: string | null;
   categoryId: string;
   featured: boolean;
@@ -63,15 +63,15 @@ export function AdminProductForm({
         </div>
         <div>
           <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Цена, ₽
+            Цена, сом (KGS)
           </label>
           <input
-            name="priceRub"
+            name="priceSom"
             type="number"
             required
             min={0}
             step={1}
-            defaultValue={product?.priceRub}
+            defaultValue={product?.priceSom}
             className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-4 py-2.5 text-zinc-900 outline-none focus:border-amber-500 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white"
           />
         </div>

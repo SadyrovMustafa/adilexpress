@@ -18,7 +18,7 @@ function parseProductForm(formData: FormData) {
   const slug = String(formData.get("slug") ?? "").trim().toLowerCase();
   const shortDesc = String(formData.get("shortDesc") ?? "").trim() || null;
   const description = String(formData.get("description") ?? "").trim();
-  const priceRub = Number(String(formData.get("priceRub") ?? "").replace(",", "."));
+  const priceSom = Number(String(formData.get("priceSom") ?? "").replace(",", "."));
   const imageUrl = String(formData.get("imageUrl") ?? "").trim() || null;
   const categoryId = String(formData.get("categoryId") ?? "").trim();
   const featured = formData.has("featured");
@@ -29,7 +29,7 @@ function parseProductForm(formData: FormData) {
     slug,
     shortDesc,
     description,
-    priceRub,
+    priceSom,
     imageUrl,
     categoryId,
     featured,
@@ -41,7 +41,7 @@ function validateProduct(data: ReturnType<typeof parseProductForm>): string | nu
   if (!data.name) return "Укажите название";
   if (!data.slug || !slugRe.test(data.slug)) return "Slug: только латиница, цифры и дефис";
   if (!data.description) return "Укажите описание";
-  if (!Number.isFinite(data.priceRub) || data.priceRub < 0) return "Укажите цену в рублях";
+  if (!Number.isFinite(data.priceSom) || data.priceSom < 0) return "Укажите цену в сомах (KGS)";
   if (!data.categoryId) return "Выберите категорию";
   return null;
 }
@@ -62,7 +62,7 @@ export async function createProductAction(
         slug: data.slug,
         shortDesc: data.shortDesc,
         description: data.description,
-        priceRub: Math.round(data.priceRub),
+        priceSom: Math.round(data.priceSom),
         imageUrl: data.imageUrl,
         categoryId: data.categoryId,
         featured: data.featured,
@@ -99,7 +99,7 @@ export async function updateProductAction(
         slug: data.slug,
         shortDesc: data.shortDesc,
         description: data.description,
-        priceRub: Math.round(data.priceRub),
+        priceSom: Math.round(data.priceSom),
         imageUrl: data.imageUrl,
         categoryId: data.categoryId,
         featured: data.featured,

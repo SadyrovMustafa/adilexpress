@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatRub } from "@/lib/money";
+import { formatKgs } from "@/lib/money";
 
 export type ProductCardProduct = {
   slug: string;
   name: string;
   shortDesc: string | null;
-  priceRub: number;
+  priceSom: number;
   imageUrl: string | null;
   inStock: boolean;
   category?: { name: string; slug: string };
@@ -56,7 +56,7 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
           </p>
         ) : null}
         <p className="mt-auto text-lg font-bold text-zinc-900 dark:text-white">
-          {formatRub(product.priceRub)}
+          {formatKgs(product.priceSom)}
         </p>
       </div>
     </article>

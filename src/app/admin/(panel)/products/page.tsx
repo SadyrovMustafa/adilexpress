@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { deleteProductAction } from "@/app/actions/admin-products";
-import { formatRub } from "@/lib/money";
+import { formatKgs } from "@/lib/money";
 import { prisma } from "@/lib/prisma";
 
 export default async function AdminProductsPage() {
@@ -44,7 +44,7 @@ export default async function AdminProductsPage() {
                   </Link>
                 </td>
                 <td className="px-4 py-3 text-zinc-600 dark:text-zinc-400">{p.category.name}</td>
-                <td className="px-4 py-3 text-zinc-900 dark:text-zinc-100">{formatRub(p.priceRub)}</td>
+                <td className="px-4 py-3 text-zinc-900 dark:text-zinc-100">{formatKgs(p.priceSom)}</td>
                 <td className="px-4 py-3">{p.featured ? "Да" : "—"}</td>
                 <td className="px-4 py-3 text-right">
                   <div className="flex flex-wrap justify-end gap-2">

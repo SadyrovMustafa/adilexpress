@@ -61,7 +61,7 @@ export default async function CategoryCatalogPage({ params }: Props) {
                 slug: p.slug,
                 name: p.name,
                 shortDesc: p.shortDesc,
-                priceRub: p.priceRub,
+                priceSom: p.priceSom,
                 imageUrl: p.imageUrl,
                 inStock: p.inStock,
                 category: { name: category.name, slug: category.slug },

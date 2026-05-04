@@ -50,7 +50,7 @@ export default async function CatalogPage() {
                 slug: p.slug,
                 name: p.name,
                 shortDesc: p.shortDesc,
-                priceRub: p.priceRub,
+                priceSom: p.priceSom,
                 imageUrl: p.imageUrl,
                 inStock: p.inStock,
                 category: { name: p.category.name, slug: p.category.slug },
